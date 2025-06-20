@@ -16,9 +16,10 @@ Including another URLconf
 """
 
 from django.urls import path
-
+from pizzas.views import PizzaView, PizzaRetrieveUpdateDestroyView
 urlpatterns = [
-
+        path('pizzas', PizzaView.as_view()),
+        path('pizzas/<int:pk>', PizzaRetrieveUpdateDestroyView.as_view())
 
 
 ]
